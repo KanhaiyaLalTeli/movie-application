@@ -13,12 +13,12 @@ function Movies() {
 
     useEffect( async () => {
         const fetchData = async () =>{
-        const url = 'http://localhost:3000/Movies-data.json';
+        const url = 'https://d3dyfaf3iutrxo.cloudfront.net/general/upload/8cc907c1bb9b404e8cb181825938fc23-data.json';
         //console.log(response.body)
         const response= await fetch(url);
        const resJson = await response.json();
          setMovie(resJson);
-         console.log("hii");
+         //console.log("hii");
         
         }
        fetchData();
@@ -126,4 +126,4 @@ function Movies() {
     )
 }
 
-export default Movies
+export default Movies;
