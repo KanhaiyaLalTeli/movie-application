@@ -58,6 +58,8 @@
   width: 100vw;
   height: 20vh;
   display: flex;
+  justify-content: space-around;
+  align-items: center;
   text-align: center;
   /*position: fixed;
   top: 0;*/
@@ -67,8 +69,8 @@
 .search-input{
   text-align: center;
   border-radius: 30px;
-  margin: 40px;
-  padding: 30px;
+ /* margin: 40px;
+  padding: 30px;*/
   height: 30px;
 }
 
@@ -76,13 +78,13 @@
   font-size: 30px;
   text-align: center;
   color: aliceblue;
-  margin: 20px;
-  padding: 20px;
+ /* margin: 20px;
+  padding: 20px;*/
   
 }
 .sort-by{
  
- margin: 45px;
+ /*margin: 45px;*/
   height: 30px;
   border-radius: 10px;
   color: black;
@@ -91,16 +93,20 @@
 }
 .movie-info-box{
   display: flex;
+  justify-content: space-around;
+  border : 2px solid black;
+  margin: 5px;
+  padding: 5px;
 }
 .info-image{
   height: 300px;
   width: 300px;
-  margin: 20px;
-  padding: 20px;
+  margin: 20px 0px;
+  padding: 20px 0px;
 }
 .info-details{
-  margin: 20px;
-  padding: 20px;
+  margin: 20px 0px;
+  padding: 20px 0px;
 }
 .info-img
 {
@@ -112,4 +118,6 @@
 }
 .close-btn{
   height: 25px;
+  float: right;
+  margin: 20px;
 }

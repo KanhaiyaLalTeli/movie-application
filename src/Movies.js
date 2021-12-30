@@ -3,6 +3,7 @@ import './App.css';
 import 'tachyons';
 import SearchBox from './SearchBox.js'
 import Movieinfo from './Movieinfo';
+import movies from './Movies-data.js';
 
 function Movies() {
    const [movie,setMovie] =useState([]);
@@ -11,23 +12,24 @@ function Movies() {
    const [selectMovie,setSelectMovie] = useState(false);
    const [selectMovie1,setSelectMovie1] = useState('');
 
-    useEffect( async () => {
-        const fetchData = async () =>{
+    useEffect(  () => {
+       /* const fetchData = async () =>{
         const url = 'https://d3dyfaf3iutrxo.cloudfront.net/general/upload/8cc907c1bb9b404e8cb181825938fc23-data.json';
         //console.log(response.body)
         const response= await fetch(url);
-       const resJson = await response.json();
-         setMovie(resJson);
+       const resJson = await response.json();*/
+         setMovie(movies);
          //console.log("hii");
         
-        }
-       fetchData();
+        
+      
        
       
     },[search,sort] )
 
     const OnSearch =  (value) =>{
              setSearch(value);
+             setSelectMovie(!selectMovie);
     }
 
     const OnSort  = (value) =>
@@ -107,7 +109,7 @@ function Movies() {
             <SearchBox onSearch={OnSearch} OnSort={OnSort}/>
             {selectMovie1 && <Movieinfo item={movie} index={selectMovie1} Handleinfo={Handleinfo}/>}
             <div className='box'>{filtereMovies && (filtereMovies.map((item,index) => 
-            (<div className='movie-info tc bg-light-green dib br3 pa3 ma2 grow bw3 shadow-5' key={index}>
+            (<div className='movie-info tc bg-light-green dib br3 pa3 ma2 bw3 shadow-5' key={index}>
                 <img src={item.Poster} className='img' alt='image'/>
                 <div><span>Title - </span> {item.Title}</div>
                   <div><span>IMDB Rating - </span> {item.imdbRating}</div>
